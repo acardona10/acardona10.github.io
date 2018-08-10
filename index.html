@@ -5,6 +5,15 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    img
+        {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+</head>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -18,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
+    <Custom CSS -->
     <link href="css/stylish-portfolio.min.css" rel="stylesheet">
 
   </head>
@@ -54,7 +63,7 @@
     <!-- Header -->
     <header class="masthead d-flex">
       <div class="container text-center my-auto">
-        <h1 class="mb-1">Abril Cardona</h1>
+          <h1 class="mb-1"><font color="dark pink">Abril Cardona</font></h1>
         <h3 class="mb-5">
           <em> </em>
         </h3>
@@ -78,7 +87,7 @@
     </section>
 
     <!-- Services -->
-    <section class="content-section text-center"
+   <section class="content-section text-center"
              id="services">
       <div class="container">
         <div class="content-section-heading">
@@ -86,21 +95,20 @@
           <h2 class="mb-5"></h2>
         </div>
         <div class="row">
-          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+         <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
             <!--<span class="service-icon rounded-circle mx-auto mb-3">-->
               <!--<i class="icon-screen-smartphone"></i>-->
             </span>
             <h4>
-              <strong></strong>
+             <strong></strong>
             </h4>
-            <p class=></p>
+            <p class= </p>
           </div>
           <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
             <!--<span class="service-icon rounded-circle mx-auto mb-3">-->
               <!--<i class="icon-pencil"></i>-->
-            </span>
             <h4>
-              <strong></strong>
+            <strong></strong>
             </h4>
             <p class="text-faded mb-0"></p>
           </div>
@@ -109,11 +117,12 @@
               <!--<i class="icon-like"></i>-->
             </span>
             <h4>
-              <strong></strong>
+        
             </h4> <div class="container text-center">
-            <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
+        <h2><img class="img-fluid" src="img/portfolio-2.jpg" alt="portfolio-2" style="" class="center"> <h2 class="mb-1"><font color="violet"> Fun facts: I like chocolate cake and chocolate ice cream. I love to spend time in nature with my son</font></h2>
+                        
           </div>
-          <div class="col-lg-3 col-md-6">
+         <!-- <div class="col-lg-3 col-md-6">
             <!--<span class="service-icon rounded-circle mx-auto mb-3">-->
               <!--<i class="icon-mustache"></i>-->
             </span>
@@ -142,9 +151,7 @@
       <div class="container">
         <div class="content-section-heading text-center">
           <h3 class="text-secondary mb-0"></h3>
-          <h2 class="mb-5">My name is Abril aka "April" 
-            I am a G & E S undergrad student. 
-            Here is some of my work..These are some of my projects from GIS</h2>
+          <h2 class="mb-5"><font color="brown">My name is Abril aka "April" I am a G & E S undergrad student. Here is some of my work..These are some of my projects from GIS</font></h2>
         </div>
         <div class="row no-gutters">
           <div class="col-lg-6">
@@ -232,15 +239,33 @@
       <i class="fa fa-angle-up"></i>
     </a>-->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <Bootstrap core JavaScript -->
+   
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<Plugin JavaScript -->
+    <script src=""></script>
+    <script> document.getElementById ("demo").innerHTML = "import arcpy
 
-    <!-- Custom scripts for this template -->
-    <script src="js/stylish-portfolio.min.js"></script>
+arcpy.env.workspace = arcpy.GetParameterAsText(0)
+output_gdb = arcpy.GetParameterAsText(1) + ".gdb"
+projection = arcpy.GetParameterAsText(2)
+clip_feature = arcpy.GetParameterAsText(3)
+
+arcpy.CreateFileGDB_management(arcpy.env.workspace, output_gdb)
+
+fcList = arcpy.ListFeatureClasses()
+
+for fc in fcList:
+      output = fc.replace(".shp", "_proj.shp")
+      arcpy.Project_management(fc, output, projection)
+      
+      arcpy.Clip_analysis(output, clip_feature, output_gdb + "/" + output.replace(".shp", ""))
+      
+      arcpy.Delete_management(output)"></script>
+    
+    <script> 
+    </script>
+
 
   </body>
 
